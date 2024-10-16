@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "AlreadySchoolEnrolled",
+    "version": "1.0",
+    "description": "Masque les offres d'emploi des écoles sur Indeed, Hellowork et Jooble.",
+    "permissions": ["storage", "activeTab", "scripting"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://fr.indeed.com/*"],
+            "js": ["OnIndeed.js"]
+        },
+        {
+            "matches": ["https://www.hellowork.com/*"],
+            "js": ["OnHellowork.js"]
+        },
+        {
+            "matches": ["https://fr.jooble.org/*"],
+            "js": ["OnJooble.js"]
+        }
+    ],
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }
+  }  
